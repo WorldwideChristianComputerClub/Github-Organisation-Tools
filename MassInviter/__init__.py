@@ -64,7 +64,7 @@ class Searcher:
 
 
 if __name__ == __name__:
-    search_term = "bible"
+    search_term = "christian"
     credentials = json.loads(open("private.json").read())
     search = Searcher(search_term,credentials['username'],credentials['password'])
     # search.get_all_results()
@@ -73,6 +73,6 @@ if __name__ == __name__:
     print("found usernames are",usernames)
     print("number of usernames found: ",len(usernames))
 
-    inviter = Inviter(usernames,'WorldwideChristianComputerClub',credentials['username'],credentials['password'])
+    inviter = Inviter(usernames,credentials['organization'],credentials['username'],credentials['password'])
 
     inviter.invite_all()
